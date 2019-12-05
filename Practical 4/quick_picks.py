@@ -2,7 +2,7 @@ import random
 
 numberlist = []
 select = int(input("number>>> "))
-MAX = 45
+MAX = 49
 MIN = 1
 number = 0
 
