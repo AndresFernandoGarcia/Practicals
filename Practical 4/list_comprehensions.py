@@ -28,10 +28,7 @@ a_names = [name for name in names if name.startswith('A')]
 print(a_names)
 
 # TODO: use a list comprehension to create a list of all of the full_names in lowercase format
-lowercase_full_names = []
-for name in full_names:
-    name = name.lower()
-    lowercase_full_names.append(name)
+lowercase_full_names = [name.lower() for name in full_names]
 print(lowercase_full_names)
 
 almost_numbers = ['0', '10', '21', '3', '-7', '88', '9']
@@ -43,3 +40,28 @@ print(numbers)
 # greater than 9 from the numbers (not strings) you just created
 greater_than_9 = [number for number in numbers if number > 9]
 print(greater_than_9)
+
+#List of numbers that are divisible by 3
+divisible_3 = [number for number in numbers if number%3 == 0]
+print(divisible_3)
+
+#list of numbers to the 2nd power
+squares_list = [number**2 for number in numbers]
+print(squares_list)
+
+#list of numbers that have 1 in them using string number list
+one_in_list = [number for number in almost_numbers if '1' in number]
+print(one_in_list)
+
+#list of odd numbers in list
+odd_nums = [number for number in numbers if number %2 == 1]
+print(odd_nums)
+
+#list of even numbers in list
+even_nums = [number for number in numbers if number%2 == 0]
+print(even_nums)
+
+#list of names that have an 'e' in their name
+e_in_name = [name for name in full_names if 'e' in name]
+print(e_in_name)
+
