@@ -11,10 +11,10 @@ class ProgrammingLanguage:
         # Return string representation from ProgrammingLanguage object
         return "{}, {} Typing, {}, {}".format(self.name, self.typing, self.reflection, self.year)
 
-    def is_Dynamic(self):
+    def is_dynamic(self):
         # Function to check if programming language is dynamically typed
         return self.typing == 'Dynamic'
 
-    def get_Name(self):  # gets name
+    def get_name(self):  # gets name
         # function to get the name of the programming language from the programming language object
         return self.name

@@ -11,6 +11,6 @@ planguages.append(visual_basic)
 
 print("The dynamically typed languages are: ")
 for item in planguages:  # looping through programming languages list
-    answer = item.is_Dynamic()
+    answer = item.is_dynamic()
     if answer:
-        print(item.get_Name())
+        print(item.get_name())
