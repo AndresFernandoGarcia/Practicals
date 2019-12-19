@@ -10,7 +10,7 @@ visual_basic = ProgrammingLanguage("Visual Basic", "Static", False, 1991)
 planguages.append(visual_basic)
 
 print("The dynamically typed languages are: ")
-for item in planguages:
+for item in planguages:  # looping through programming languages list
     answer = item.is_Dynamic()
-    if answer == True:
-       print(item.get_Name())
+    if answer:
+        print(item.get_Name())
