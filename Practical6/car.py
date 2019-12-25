@@ -33,3 +33,15 @@ class Car:
             self.fuel -= distance
         self.odometer += distance
         return distance
+
+    def get_fuel(self):
+        """Gets the fuel of the car from the Car object"""
+        return self.fuel
+
+    def get_odo(self):
+        """Gets the odometer of the car from the Car object"""
+        return self.odometer
+
+    def get_name(self):
+        """Gets the name of the car from the Car object"""
+        return self.name
