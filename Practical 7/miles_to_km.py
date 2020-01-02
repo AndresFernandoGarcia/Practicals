@@ -9,22 +9,22 @@ class MilesToKmApp(App):
 
 
     def build(self):
-        """Build the Kivy app from the kv file."""
+        """ Build the Kivy app from the kv file. """
         Window.size = (400, 200)
         self.title = "Miles to Kilometer converter"
         self.root = Builder.load_file('miles_to_km.kv')
         return self.root
 
     def handle_calculate(self, value):
-        """Handle calculation (could be button press or other call),
-        output result to label widget."""
         correct = validate_input(value)
 
         if (correct == False):
             result = "Your number must be an integer!"
             self.root.ids.input_number.text = str(0)
 
+
         else:
+            value = int(value)
             if (value < 0):
                 result = "Value must be greater than 0!"
                 self.root.ids.input_number.text = str(0)
@@ -37,7 +37,7 @@ class MilesToKmApp(App):
 
 
     def handle_increment(self, value, increment):
-        """Handles increment of input value"""
+        """ Handles increment of input value """
 
         correct = validate_input(value)
 
@@ -46,7 +46,7 @@ class MilesToKmApp(App):
             result = 0
 
         else:
-
+            value = int(value)
             if(value <= 0 and increment == -1):
                 result = 0
             else:
@@ -56,8 +56,13 @@ class MilesToKmApp(App):
 
 
 def validate_input(value):
+    """ Function that validates that input isn't empty and is an integer """
     try:
         value = int(value)
+
+        if(value == ""):
+            return False
+
 
     except ValueError:
         return False
