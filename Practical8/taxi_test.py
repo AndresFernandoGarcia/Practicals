@@ -4,9 +4,10 @@ def main():
     mytaxi = Taxi("Prius 1", 100)
 
     mytaxi.drive(40)
-    print(mytaxi)
+    print(mytaxi , "\nCurrent fare: " , mytaxi.get_fare())
     mytaxi.start_fare()
-    print(mytaxi)
+    mytaxi.drive(100)
+    print(mytaxi , "\nCurrent fare: " , mytaxi.get_fare())
 
 
 main()
