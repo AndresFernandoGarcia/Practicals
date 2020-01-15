@@ -1,5 +1,6 @@
 from Practical8.taxi import Taxi
 from Practical8.silver_service_taxi import SilverServiceTaxi
+
 # Forming taxi list
 mytaxi1 = Taxi("Prius1", 100)
 mytaxi2 = Taxi("Corvette", 150)
@@ -16,8 +17,7 @@ def main():
      d) drive
      q) quit"""
     print("Let's Drive!")
-    continues = True
-    while (continues != False):  # loop until 'q' is pressed
+    while True:  # loop until 'q' is pressed
         print(MENU)
         print("")
         decision = input("Enter your choice: ")
@@ -33,7 +33,7 @@ def main():
                 count += 1
                 print("{}. {}".format(count, car))
             print("Your total bill is ${}".format(total_bill))
-            continues = False
+            return False
 
         elif decision == "d":
             if current_taxi is None:  # Checking whether current_taxi has a value other than None
@@ -45,7 +45,7 @@ def main():
                 print("Total Fare: ${:.2f}".format(total_bill))
                 current_taxi = None
 
-        elif (decision == "c"):
+        elif decision == "c":
             current_taxi = list_taxis()
 
 
@@ -54,15 +54,15 @@ def list_taxis():
     for car in taxi_list:
         count += 1
         print("{}. {}".format(count, car))
-    finish = False
-    while finish != True:  # index value error check
+
+    while True:  # index value error check
         print("Choose your taxi")
         try:  # try to get index input
             selection = int(input(">>> "))
             while selection < 0 or selection > len(taxi_list):
                 print("Error - out of bounds")
                 selection = int(input(">>> "))
-            finish = True
+            break
         except ValueError:  # catches any value error in the selection value
             print("Error - index must be a number!")
     car = taxi_list[selection - 1]
@@ -70,15 +70,15 @@ def list_taxis():
 
 
 def drive_taxi(taxi):
-    finish = False
-    while finish != True:  # index value error check
+    print(taxi)
+    while True:  # index value error check
         print("How much would you want to drive?")
         try:  # try to get index input
             selection = int(input(">>> "))
             while selection < 0:
                 print("Error - out of bounds")
                 selection = int(input(">>> "))
-            finish = True
+            break
         except ValueError:  # catches any value error in the selection value
             print("Error - index must be a number!")
     taxi.drive(selection)
