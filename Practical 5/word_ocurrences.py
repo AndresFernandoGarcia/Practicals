@@ -9,7 +9,7 @@ def main():
             word_dictionary[word] = word_list.count(word)
 
     for key,value in word_dictionary.items():
-        print("{:{}} : {}".format(key, 5, value))
+        print("{:{}} : {}".format(key, 10, value))
 
 
 
