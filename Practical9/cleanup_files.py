@@ -2,7 +2,6 @@
 CP1404/CP5632 Practical
 Demos of various os module examples
 """
-import shutil
 import os
 
 
@@ -23,7 +22,7 @@ def main():
 
         new_name = get_fixed_filename(filename)
         print("Renaming {} to {}".format(filename, new_name))
-        # os.rename(filename, new_name)
+        os.rename(filename, new_name)
 
 
 def get_fixed_filename(filename):
@@ -33,6 +32,8 @@ def get_fixed_filename(filename):
     for i, item in enumerate(filename[:-1]):
         if not item.isupper() and filename[i-1] == " ":
             word += item.upper()
+        elif item == "_":
+            word += item
         elif item == " ":
             word += "_"
         elif item in special_symbols:

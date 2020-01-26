@@ -8,7 +8,7 @@ def main():
         if word not in word_dictionary:
             word_dictionary[word] = word_list.count(word)
 
-    for key,value in word_dictionary.items():
+    for key, value in word_dictionary.items():
         print("{:{}} : {}".format(key, 10, value))
 
 
